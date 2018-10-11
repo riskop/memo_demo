@@ -1,38 +1,44 @@
+turned1 = undefined;
+turned2 = undefined;
 'use strict';
 
-window.turned1 = undefined;
-window.turned2 = undefined;
-
 function cardClicked(card) {
-    if(window.turned1 === undefined) {
+    if(turned1 === undefined) {
         turn(card);
-        window.turned1 = card;
+        turned1 = card;
     }
     else {
-        if(window.turned2 === undefined) {
+        if(turned2 === undefined) {
             turn(card);
-            if(card.value === window.turned1.value) {
-                var score = document.getElementById('score');
-                score.textContent = parseInt(score.textContent)+1;
-                var turned1 = window.turned1;
-                setTimeout(function() {
-                    card.textContent = 'X'
-                    turned1.textContent = 'X';
-                }, 1000);
-                window.turned1 = undefined;
+            if(card.value === turned1.value) {
+                increaseScore();
+                removePair(turned1, card, 1000)
+                turned1 = undefined;
             }
             else {
-                window.turned2 = card;
+                turned2 = card;
             }
         }
         else {
-            turnDown(window.turned1);
-            turnDown(window.turned2);
+            turnDown(turned1);
+            turnDown(turned2);
             turn(card);
-            window.turned1 = card;
-            window.turned2 = undefined;
+            turned1 = card;
+            turned2 = undefined;
         }
     }
+}
+
+function increaseScore() {
+    var score = document.getElementById('score');
+    score.textContent = parseInt(score.textContent)+1;
+}
+
+function removePair(card1, card2, delay) {
+    setTimeout(function() {
+        card1.textContent = 'X'
+        card2.textContent = 'X';
+    }, delay);
 }
 
 function turn(card) {

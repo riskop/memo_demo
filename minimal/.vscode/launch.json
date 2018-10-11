@@ -14,7 +14,7 @@
             "name": "Launch Chrome against localhost",
             //"url": "http://localhost:8080",
             //"file": "${workspaceFolder}/datum.html"
-            "file": "/home/riskop/Documents/privat/vs_js_folder/memo.html"
+            "file": "${workspaceFolder}/memo.html"
             //"webRoot": "${workspaceFolder}"
         }
     ]

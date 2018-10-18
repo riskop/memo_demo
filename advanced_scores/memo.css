@@ -1,0 +1,13 @@
+* {
+	font-size: 64px;
+	font-family: Arial;
+}
+button {
+	height:100px;
+	width:100px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position : center center;
+	float: left;
+	margin: 5px;
+}

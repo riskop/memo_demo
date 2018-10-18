@@ -1,0 +1,17 @@
+* {
+	font-size: 32px;
+	font-family: Arial;
+}
+input[type=checkbox] {
+	transform: scale(2.0);
+}
+button.card {
+	font-size: 80px;
+	height:100px;
+	width:100px;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position : center center;
+	float: left;
+	margin: 5px;
+}

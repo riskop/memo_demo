@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "minimal_with_pictures"
+		},
+		{
+			"path": "advanced_scores"
+		},
+		{
+			"path": "advanced_scores_and_config"
 		}
 	],
 	"settings": {}

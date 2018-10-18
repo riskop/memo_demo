@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Memo demo</title>
+	<link rel="stylesheet" href="memo.css">
+	<script src="memo.js"></script>
+	<script>
+window.addEventListener('load', function() {
+    init("images/hat_{}.png", 4);
+});
+	</script>
+</head>
+<body>
+	<div>
+		Number of pairs: <span id=numberOfPairs>4</span>
+		<input value="4" type="range" min="2" max="10" onchange="document.getElementById('numberOfPairs').innerHTML = value;">
+		<button 
+			type="button" 
+			onclick='init("images/hat_{}.png");'>Restart game</button>
+		Cheat mode: <input id="cheatModeCheckBox" type="checkbox" onclick="changeCheatMode()">
+	</div>
+	<div>Clever hits: <span id="cleverHits">0</span> Accumulated cleverness: <span id="accumulatedCleverness">0</span></div>
+	<div>Lucky hits: <span id="luckyHits">0</span> Accumulated luck: <span id="accumulatedLuck">0</span></div>
+	<div>Unlucky tries: <span id="unluckyTries">0</span></div>
+	<div>Mistakes: <span id="mistakes">0</span></div>
+	<div id="buttonHolder">
+		<button 
+			type="button" 
+			onclick="cardClicked(this)" 
+			class="card"
+			>X</button>
+	</div>
+</body>
+</html>
